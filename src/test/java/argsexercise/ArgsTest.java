@@ -1,4 +1,4 @@
-package argsExercise;
+package argsexercise;
 
 import org.junit.Test;
 
@@ -14,11 +14,11 @@ public class ArgsTest {
         String argsText = "-l true -p 8080 -d user/logs";
         Args args = new Args(argsText);
 
-        List<KeyValuePair> KeyValuePairs = args.scan();
+        List<Arg> KeyValuePairs = args.scan();
 
         assertEquals(3, KeyValuePairs.size());
-        assertTrue(KeyValuePairs.contains(new KeyValuePair("l", "true")));
-        assertTrue(KeyValuePairs.contains(new KeyValuePair("p", "8080")));
-        assertTrue(KeyValuePairs.contains(new KeyValuePair("d", "user/logs")));
+        assertTrue(KeyValuePairs.contains(new Arg("l", "true")));
+        assertTrue(KeyValuePairs.contains(new Arg("p", "8080")));
+        assertTrue(KeyValuePairs.contains(new Arg("d", "user/logs")));
     }
 }

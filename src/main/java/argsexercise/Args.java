@@ -1,4 +1,4 @@
-package argsExercise;
+package argsexercise;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -14,7 +14,7 @@ public class Args {
         this.argsText = argsText;
     }
 
-    public List<KeyValuePair> scan() {
+    public List<Arg> scan() {
         List<String> keyValues = Arrays.asList(argsText.split("-"));
         keyValues = keyValues.stream()
 //                .map(String::trim)
@@ -25,15 +25,15 @@ public class Args {
         return getKeyValuePairs(keyValues);
     }
 
-    private List<KeyValuePair> getKeyValuePairs(List<String> keyValues) {
-        List<KeyValuePair> keyValuePairs = new ArrayList<>();
+    private List<Arg> getKeyValuePairs(List<String> keyValues) {
+        List<Arg> args = new ArrayList<>();
         keyValues.forEach(keyValue -> {
             String [] splitKeyValue = keyValue.split(" ");
             String key = splitKeyValue[0];
             String value = splitKeyValue[1];
-            keyValuePairs.add(new KeyValuePair(key, value));
+            args.add(new Arg(key, value));
         });
-        return keyValuePairs;
+        return args;
     }
 
     public List<String> scan2() {
