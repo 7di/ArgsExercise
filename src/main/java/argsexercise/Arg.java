@@ -13,8 +13,12 @@ public class Arg {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Arg that = (Arg) o;
         return Objects.equals(key, that.key) &&
                 Objects.equals(value, that.value);
